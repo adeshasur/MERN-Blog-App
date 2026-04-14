@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config(); // අපේ .env ෆයිල් එක කියවන්න
 
 const app = express();
 const PORT = 5000;
 
+app.use(cors()); // වෙනත් Port වලින් එන requests වලට ඉඩ දෙන්න
 app.use(express.json()); // අපිට JSON දත්ත තේරුම් ගන්න පුළුවන් වෙන්න
 
 // දත්ත ගබඩාවට සම්බන්ධ වීම
